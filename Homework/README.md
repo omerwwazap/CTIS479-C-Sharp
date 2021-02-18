@@ -1,4 +1,4 @@
-## CTIS479 C# Homework
+# CTIS479 C# Homework
 
 ## Homework - 1 Requirements
 

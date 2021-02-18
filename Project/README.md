@@ -1,4 +1,5 @@
-## CTIS479 C# Project
+# CTIS479 C# Project
+
 Project for CTIS 479
 Project is about **C# Server and Client Socket program**
 
