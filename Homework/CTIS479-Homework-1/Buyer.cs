@@ -49,15 +49,5 @@ namespace CTIS479_Homework_1
 
         }
 
-        public string getFirstname
-        {
-            get { return firstName; }
-        }
-
-        public string getLastname
-        {
-            get { return lastName; }
-        }
-
     }
 }
