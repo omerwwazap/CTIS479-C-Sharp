@@ -12,6 +12,7 @@ namespace CTIS479_Homework_1
 
         // 3.There has to be at least one has-a relation between the classes.
         public Address address;//Employee HAS-A Address  
+        public Location now;
 
         public void GetFullname()
         {
@@ -28,10 +29,18 @@ namespace CTIS479_Homework_1
             this.lastName = lastName;
             this.address = address;
         }
+        public Buyer(string firstName, string lastName, Address address, Location now)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.address = address;
+            this.now = now;
+        }
 
         public void display()
         {
             Console.WriteLine("Addess of: "+this.firstName+" "+this.lastName+". is this: "+this.address.addressLine+", " + this.address.city + ", " + this.address.state+".");
+            now.Display();
         }
     }
 }
