@@ -12,17 +12,20 @@ namespace CTIS479_Homework_1
         private string firstName;
         private string lastName;
         private int age;
-        private int[] sold;
 
 
-        public string Fullname{
-            get{
+        public string Fullname
+        {
+            get
+            {
                 return string.Format("{0} {1}", this.firstName, this.lastName);
             }
         }
-        public string getAge{
-            get{
-                return string.Format("{0}",this.age);
+        public string getAge
+        {
+            get
+            {
+                return string.Format("{0}", this.age);
             }
         }
 

@@ -7,7 +7,7 @@ using System.Text;
 namespace CTIS479_Homework_1
 {
     public sealed class Address
-	{
+    {
         public string addressLine, city, state;
         public Address(string addressLine, string city, string state)
         {

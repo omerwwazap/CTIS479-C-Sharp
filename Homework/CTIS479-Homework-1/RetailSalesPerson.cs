@@ -20,7 +20,8 @@ namespace CTIS479_Homework_1
             {
                 Console.WriteLine("Hi! Mi name is {0} and my age: {1}, and Our Compay developed this car in house and took 20 years :(", this.Fullname, this.getAge);
             }
-            else{
+            else
+            {
                 Console.WriteLine("Hi! Mi name is {0}, and Our Compay developed this car in house and took 20 years :(", this.Fullname);
             }
 
