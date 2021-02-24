@@ -56,6 +56,24 @@ namespace CTIS479_Homework_1
             return new Location(p1.X - 1, p1.Y - 1);
         }
 
+        public void Location_calculator(params Location[] values)
+        {
+            if (values.Length == 0)
+            {
+                Console.WriteLine("Error: no arguments in method call");
+
+            }
+
+            for (int i = 0;)
+            {
+
+            }
+
+
+
+
+        }
+
 
     }
 }
