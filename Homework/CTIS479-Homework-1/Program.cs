@@ -34,15 +34,27 @@ namespace CTIS479_Homework_1
             Console.WriteLine("The Location of your car is: ");
             skoda.Display();
 
+
             Location distanceto_car = isim1_Loc_now - skoda;
             Console.WriteLine("Your Distance to your car is: ");
+            double distance_from_buyer = Math.Round(Math.Sqrt(Math.Pow((distanceto_car.Y - isim1_Loc_now.Y), 2) + Math.Pow((distanceto_car.X - isim1_Loc_now.X), 2)), 1);
+            Console.WriteLine(distance_from_buyer + "meters.");
+            Console.WriteLine("Current Location is: ");
             distanceto_car.Display();
+
+            if (distance_from_buyer.UseBus())
+            { // True if value is larger than 300meters
+                Console.WriteLine("Pls use a bus");
+            }
+            else
+            {
+                Console.WriteLine("The car is near, walking is healty :)");
+            }
+
 
             Console.WriteLine("\n************\n");
             Re_Helper helper = new Re_Helper("Yardımcı1", "Yardımcı1");
             helper.Sell();
-
-
 
 
 
