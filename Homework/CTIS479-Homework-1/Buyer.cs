@@ -13,6 +13,7 @@ namespace CTIS479_Homework_1
         // 3.There has to be at least one has-a relation between the classes.
         public Address address;//Employee HAS-A Address  
         public Location now;
+        public bool got_car;
 
         public void GetFullname()
         {
@@ -29,19 +30,25 @@ namespace CTIS479_Homework_1
             this.lastName = lastName;
             this.address = address;
         }
-        public Buyer(string firstName, string lastName, Address address, Location now)
+        public Buyer(string firstName, string lastName, Address address, Location now, bool got_car)
         {
             this.firstName = firstName;
             this.lastName = lastName;
             this.address = address;
             this.now = now;
+            this.got_car = got_car;
         }
 
-        public void display()
+        public void Display()
         {
             Console.WriteLine("Addess of: " + this.firstName + " " + this.lastName + ". is this: " + this.address.addressLine + ", " + this.address.city + ", " + this.address.state + ".");
+            Console.WriteLine("Bought Car: {0}", this.got_car);
             Console.WriteLine("Current Location is: ");
             now.Display();
+
         }
+
+
+
     }
 }

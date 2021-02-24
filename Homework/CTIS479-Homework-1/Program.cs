@@ -24,9 +24,9 @@ namespace CTIS479_Homework_1
             Console.WriteLine("\n************\n");
             Address a1 = new Address(addressLine: "Bilkent.....", city: "Ankara", state: "Ankara");
             Location isim1_Loc_now = new Location(100, 0);
-            Buyer buys = new Buyer(lastName: "isim1", firstName: "isim2", address: a1, now: isim1_Loc_now); // 10.Call the methods by using the named arguments
+            Buyer buys = new Buyer(lastName: "isim1", firstName: "isim2", address: a1, now: isim1_Loc_now, got_car: false); // 10.Call the methods by using the named arguments
             buys.GetFullname();
-            buys.display();
+            buys.Display();
 
             //Location of Car that is bought
             //13.Create at least one structure and use it in your application.
@@ -37,7 +37,10 @@ namespace CTIS479_Homework_1
 
             Location distanceto_car = isim1_Loc_now - skoda;
             Console.WriteLine("Your Distance to your car is: ");
-            double distance_from_buyer = Math.Round(Math.Sqrt(Math.Pow((distanceto_car.Y - isim1_Loc_now.Y), 2) + Math.Pow((distanceto_car.X - isim1_Loc_now.X), 2)), 1);
+            double distance = Math.Round(Math.Sqrt(Math.Pow((distanceto_car.Y - isim1_Loc_now.Y), 2) + Math.Pow((distanceto_car.X - isim1_Loc_now.X), 2)), 1);
+            double distance_from_buyer;
+            //19.Create a method(s) with out parameters
+            distance_by_meters(distance, 2, out distance_from_buyer);
             Console.WriteLine(distance_from_buyer + "meters.");
             Console.WriteLine("Current Location is: ");
             distanceto_car.Display();
@@ -50,6 +53,9 @@ namespace CTIS479_Homework_1
             {
                 Console.WriteLine("The car is near, walking is healty :)");
             }
+            //19.Create a method(s) with in parameters
+            change_bought(buys);
+            buys.Display();
 
 
             Console.WriteLine("\n************\n");
@@ -59,5 +65,18 @@ namespace CTIS479_Homework_1
 
 
         }
+        //19.Create a method(s) with out parameters
+        private static void distance_by_meters(double x, int y, out double ans)
+        {
+            ans = Math.Round(x, y);
+        }
+        //19.Create a method(s) with in parameters
+        static void change_bought(in Buyer buys)
+        {
+            buys.got_car = true;
+        }
+
+
+
     }
 }
