@@ -75,7 +75,7 @@ namespace CTIS479_Homework_1
         {
             buys.got_car = true;
         }
-
+        //19.Create a method(s) with ref parameters
 
 
     }
