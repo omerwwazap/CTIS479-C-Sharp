@@ -6,13 +6,11 @@ namespace CTIS479_Homework_1
 {
     public class RetailSalesPerson : Salesman, SelfDeveloping
     {
-        public RetailSalesPerson(string firstName, string lastName) : base(firstName, lastName)
-        {
-        }
+        public RetailSalesPerson(string firstName, string lastName) : base(firstName, lastName) { }
 
-        public RetailSalesPerson(string firstName, string lastName, int age) : base(firstName, lastName, age)
-        {
-        }
+
+        public RetailSalesPerson(string firstName, string lastName, int age) : base(firstName, lastName, age) { }
+
 
         public void Car_Develop()
         {

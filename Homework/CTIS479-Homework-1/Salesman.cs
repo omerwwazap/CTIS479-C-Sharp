@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
+//1.Create at least 3 classes Buyer,Salesman,RetailSalesPerson
+
+//4.Create at least one abstract class.
 namespace CTIS479_Homework_1
 {
     public abstract class Salesman
