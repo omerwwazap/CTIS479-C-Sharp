@@ -114,17 +114,68 @@ namespace LeventDurdali_HomeWork1
             mixup_inDatabase(ref buys);
             buys.Display();
 
-            Console.WriteLine("\n************\n");
+            Console.WriteLine("\n************");
             Re_Helper helper = new Re_Helper("Yardımcı1", "Yardımcı1");
             helper.Sell();
 
 
+            //14.Create at least one enum and use it in your application.
+            EmpTypeEnum Helper = EmpTypeEnum.Helper;
+            EmpTypeEnum Salesman = EmpTypeEnum.Salesman;
+            EmpTypeEnum Customer = EmpTypeEnum.Customer;
+
+            string val2;
+            int exit2;
+            do
+            {
+                Console.Write("\nTime For feed back choose your occupation: \n");
+                Console.Write($"1 - Customer\n");
+                Console.Write($"2 - Helper\n");
+                Console.Write($"3 - Salesman\n");
+                Console.Write("9 - to exit\n");
+                val2 = Console.ReadLine();
+                exit2 = Convert.ToInt32(val);
+                if (exit2 == 1)
+                {
+                    Survay_toUsers(Customer);
+                    break;
+                }
+                if (exit2 == 2)
+                {
+                    Survay_toUsers(Helper);
+                    break;
+                }
+                if (exit2 == 3)
+                {
+                    Survay_toUsers(Salesman);
+                    break;
+                }
+            } while (exit != 9);
 
 
+        }
 
 
-
-
+        enum EmpTypeEnum
+        {
+            Helper,
+            Salesman,
+            Customer,
+        }
+        static void Survay_toUsers(EmpTypeEnum e)
+        {
+            switch (e)
+            {
+                case EmpTypeEnum.Helper:
+                    Console.WriteLine("Congrats you recived a 5/5 stars from the Customer(buyer)");
+                    break;
+                case EmpTypeEnum.Salesman:
+                    Console.WriteLine("Sorry the Customer(buyer) didnt like you, 0/5 stars");
+                    break;
+                case EmpTypeEnum.Customer:
+                    Console.WriteLine("Have a nice day");
+                    break;
+            }
         }
 
         public static int Car_cost(params int[] b)
