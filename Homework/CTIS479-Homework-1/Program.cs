@@ -61,8 +61,6 @@ namespace CTIS479_Homework_1
             mixup_inDatabase(ref buys);
             buys.Display();
 
-
-
             Console.WriteLine("\n************\n");
             Re_Helper helper = new Re_Helper("Yardımcı1", "Yardımcı1");
             helper.Sell();
