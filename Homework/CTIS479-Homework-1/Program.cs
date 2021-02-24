@@ -21,9 +21,16 @@ namespace CTIS479_Homework_1
             SalesPerson2.Car_Develop();
 
             Console.WriteLine("\n************\n");
-
-            Buyer buys = new Buyer(lastName:"isim1",firstName:"isim2"); // 10.Call the methods by using the named arguments
+            Address a1 = new Address(addressLine: "Bilkent.....",city: "Ankara", state: "Ankara");
+            Buyer buys = new Buyer(lastName:"isim1",firstName:"isim2",address: a1); // 10.Call the methods by using the named arguments
             buys.GetFullname();
+            buys.display();
+
+
+            Console.WriteLine("\n************\n");
+            Re_Helper helper = new Re_Helper("Yardımcı1", "Yardımcı1");
+            helper.Sell();
+
 
 
         }

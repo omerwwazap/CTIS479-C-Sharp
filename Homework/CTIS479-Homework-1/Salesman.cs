@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-//1.Create at least 3 classes Buyer,Salesman,RetailSalesPerson
-
+//1.Create at least 3 classes Buyer,Salesman,RetailSalesPerson,Re-helper
+//2.Add is -a relation between the classes, there has to be at least 3 level of inheritance
 //4.Create at least one abstract class.
 namespace CTIS479_Homework_1
 {
