@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CTIS479_Homework_1
+namespace LeventDurdali_HomeWork1
 {
     class Program
     {
@@ -22,8 +22,8 @@ namespace CTIS479_Homework_1
             SalesPerson2.Car_Develop();
 
             //15.Create an use tuples
-            var car_Properties_Skoda = (Brand: "Skoda", HP: 150, Type: "Hatchback");
-            var car_Properties_Seat = (Brand: "Seat", HP: 200, Type: "Coupe");
+            var car_Properties_Skoda = (Brand: "Skoda", HP: 150, Type: "Hatchback", price: 100);
+            var car_Properties_Seat = (Brand: "Seat", HP: 200, Type: "Coupe", price: 200);
 
             string val;
             int exit;
@@ -31,8 +31,9 @@ namespace CTIS479_Homework_1
             do
             {
                 Console.Write("\nEnter Car Numer to choose: \n");
-                Console.Write($"1 - {car_Properties_Skoda.Brand} - {car_Properties_Skoda.HP} - {car_Properties_Skoda.Type}\n");
-                Console.Write($"2 - {car_Properties_Seat.Brand} - {car_Properties_Seat.HP} - {car_Properties_Seat.Type}\n");
+                Console.Write($"1 - {car_Properties_Skoda.Brand} - {car_Properties_Skoda.HP} - {car_Properties_Skoda.Type} - {car_Properties_Skoda.price}\n");
+                Console.Write($"2 - {car_Properties_Seat.Brand} - {car_Properties_Seat.HP} - {car_Properties_Seat.Type} - {car_Properties_Seat.price}\n");
+                Console.Write($"3 - Both Cars\n");
                 Console.Write("9 - to exit\n");
                 val = Console.ReadLine();
                 exit = Convert.ToInt32(val);
@@ -46,6 +47,12 @@ namespace CTIS479_Homework_1
                 {
                     Console.Write("\nChoosen: {0} \n", car_Properties_Seat.Brand);
                     choosen = car_Properties_Seat.Brand;
+                    break;
+                }
+                if (exit == 3)
+                {
+                    Console.Write("\nChoosen: {0} \n", car_Properties_Seat.Brand);
+                    choosen = car_Properties_Skoda.Brand + " and " + car_Properties_Seat.Brand;
                     break;
                 }
             } while (exit != 9);
@@ -64,6 +71,22 @@ namespace CTIS479_Homework_1
             Console.WriteLine("The Location of your car is: ");
             car_loc.Display();
 
+
+            //20.Create a method(s) so that it can be called with variable length of parameters.
+            int cost = 0;
+            if (exit == 1)
+            {
+                cost = Car_cost(car_Properties_Skoda.price);
+            }
+            else if (exit == 2)
+            {
+                cost = Car_cost(car_Properties_Seat.price);
+            }
+            else if (exit == 3)
+            {
+                cost = Car_cost(car_Properties_Seat.price, car_Properties_Skoda.price);
+            }
+            Console.WriteLine("Cos of Your chosen car(s): " + cost);
 
             Location distanceto_car = isim1_Loc_now - car_loc;
             Console.WriteLine("Your Distance to your car is: ");
@@ -101,7 +124,19 @@ namespace CTIS479_Homework_1
 
 
 
+
         }
+
+        public static int Car_cost(params int[] b)
+        {
+            int mul = 0;
+            foreach (int a in b)
+            {
+                mul = mul + a;
+            }
+            return mul;
+        }
+
         //19.Create a method(s) with out parameters
         public static void distance_by_meters(double x, int y, out double ans)
         {

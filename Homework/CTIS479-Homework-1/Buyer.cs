@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 //1.Create at least 3 classes Buyer,Salesman,RetailSalesPerson,Re-helper
-namespace CTIS479_Homework_1
+namespace LeventDurdali_HomeWork1
 {
     public class Buyer
     {

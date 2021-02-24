@@ -4,7 +4,7 @@ using System.Text;
 
 //3.There has to be at least one has-a relation between the classes.
 //7.Last sub class in the in the inheritance must be the final class and cannot be extended.
-namespace CTIS479_Homework_1
+namespace LeventDurdali_HomeWork1
 {
     public sealed class Address
     {
