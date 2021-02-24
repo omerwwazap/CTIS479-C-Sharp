@@ -24,7 +24,7 @@ namespace CTIS479_Homework_1
             Console.WriteLine("\n************\n");
             Address a1 = new Address(addressLine: "Bilkent.....", city: "Ankara", state: "Ankara");
             Location isim1_Loc_now = new Location(100, 0);
-            Buyer buys = new Buyer(lastName: "isim1", firstName: "isim2", address: a1, now: isim1_Loc_now, got_car: false); // 10.Call the methods by using the named arguments
+            Buyer buys = new Buyer(lastName: "Ömer", firstName: "Levent", address: a1, now: isim1_Loc_now, got_car: false); // 10.Call the methods by using the named arguments
             buys.GetFullname();
             buys.Display();
 
@@ -57,6 +57,11 @@ namespace CTIS479_Homework_1
             change_bought(buys);
             buys.Display();
 
+            //19.Create a method(s) with ref parameters
+            mixup_inDatabase(ref buys);
+            buys.Display();
+
+
 
             Console.WriteLine("\n************\n");
             Re_Helper helper = new Re_Helper("Yardımcı1", "Yardımcı1");
@@ -66,16 +71,23 @@ namespace CTIS479_Homework_1
 
         }
         //19.Create a method(s) with out parameters
-        private static void distance_by_meters(double x, int y, out double ans)
+        public static void distance_by_meters(double x, int y, out double ans)
         {
             ans = Math.Round(x, y);
         }
         //19.Create a method(s) with in parameters
-        static void change_bought(in Buyer buys)
+        public static void change_bought(in Buyer buys)
         {
             buys.got_car = true;
         }
-        //19.Create a method(s) with ref parameters
+        //19.Create a method(s) with ref, out and in parameters
+        public static void mixup_inDatabase(ref Buyer buys)
+        {
+            buys.address.addressLine = "Lost ERROR";
+            buys.address.city = "Lost ERROR";
+            buys.address.state = "Lost ERROR";
+
+        }
 
 
     }
