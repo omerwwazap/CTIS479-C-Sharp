@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 //13.Create at least one structure and use it in your application.
+//18.Implement at least one operator overload
 namespace CTIS479_Homework_1
 {
 
@@ -32,7 +33,7 @@ namespace CTIS479_Homework_1
 
         public void Display()
         {
-            Console.WriteLine("X = {0}, Y = {1}", X, Y);
+            Console.WriteLine("X = {0}, Y = {1} \n", X, Y);
         }
 
         public static Location operator +(Location p1, Location p2)
@@ -40,9 +41,20 @@ namespace CTIS479_Homework_1
             return new Location(p1.X + p2.X, p1.Y + p2.Y);
         }
 
+        public static Location operator -(Location p1, Location p2)
+        {
+            return new Location(p1.X - p2.X, p1.Y - p2.Y);
+        }
 
+        public static Location operator ++(Location p1)
+        {
+            return new Location(p1.X + 1, p1.Y + 1);
+        }
 
-
+        public static Location operator --(Location p1)
+        {
+            return new Location(p1.X - 1, p1.Y - 1);
+        }
 
 
     }

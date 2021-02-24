@@ -23,7 +23,7 @@ namespace CTIS479_Homework_1
             this.firstName = firstName;
             this.lastName = lastName;
         }
-        public Buyer(string firstName, string lastName, Address address) 
+        public Buyer(string firstName, string lastName, Address address)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -39,7 +39,8 @@ namespace CTIS479_Homework_1
 
         public void display()
         {
-            Console.WriteLine("Addess of: "+this.firstName+" "+this.lastName+". is this: "+this.address.addressLine+", " + this.address.city + ", " + this.address.state+".");
+            Console.WriteLine("Addess of: " + this.firstName + " " + this.lastName + ". is this: " + this.address.addressLine + ", " + this.address.city + ", " + this.address.state + ".");
+            Console.WriteLine("Current Location is: ");
             now.Display();
         }
     }
