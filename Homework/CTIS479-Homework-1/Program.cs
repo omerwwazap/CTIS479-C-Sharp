@@ -166,13 +166,14 @@ namespace LeventDurdali_HomeWork1
                 }
             } while (exit != 9);
 
-            DataStore<string> names = new DataStore<string>(5);
-            names[0] = SalesPerson2.Fullname;
-            names[1] = retailSalesPerson.Fullname;
-            names[2] = buys.Fullname;
 
+            DataStore<string> names = new DataStore<string>();
+
+
+            Console.WriteLine("No of People that interacted with another in the sale of the Car(s): " + names.Length);
             for (int i = 0; i < names.Length; i++)
                 Console.WriteLine(names[i]);
+
 
 
             //11.Use at least one generic collection and display the sorted output

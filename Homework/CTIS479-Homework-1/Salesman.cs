@@ -9,9 +9,9 @@ namespace LeventDurdali_HomeWork1
 {
     public abstract class Salesman
     {
-        private string firstName;
-        private string lastName;
-        private int age;
+        private string firstName { get; set; }
+        private string lastName { get; set; }
+        private int age { get; set; }
 
 
         public string Fullname

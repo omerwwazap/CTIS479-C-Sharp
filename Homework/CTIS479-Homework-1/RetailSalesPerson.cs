@@ -7,10 +7,10 @@ using System.Text;
 namespace LeventDurdali_HomeWork1
 {
     public class RetailSalesPerson : Salesman, SelfDeveloping
-    {
+    {   // calls the base class constructor 
         public RetailSalesPerson(string firstName, string lastName) : base(firstName, lastName) { }
 
-
+        // calls the base class constructor
         public RetailSalesPerson(string firstName, string lastName, int age) : base(firstName, lastName, age) { }
 
 

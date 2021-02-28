@@ -7,9 +7,9 @@ namespace LeventDurdali_HomeWork1
 {
     public class Buyer
     {
-        private string firstName;
-        private string lastName;
-        private string car_name;
+        private string firstName { get; set; }
+        private string lastName { get; set; }
+        private string car_name { get; set; }
 
         // 3.There has to be at least one has-a relation between the classes.
         public Address address; //Buyer HAS-A Address  
@@ -66,8 +66,6 @@ namespace LeventDurdali_HomeWork1
                 Console.WriteLine("Your Current Location is: ");
                 now.Display();
             }
-
-
 
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 //21.Create a generic class
+//16.Implement at least one indexer
 namespace CTIS479_Homework_1
 {
     class DataStore<T>
@@ -10,7 +11,7 @@ namespace CTIS479_Homework_1
         private T[] store;
         public DataStore()
         {
-            store = new T[10];
+            store = new T[5];
         }
 
         public DataStore(int length)

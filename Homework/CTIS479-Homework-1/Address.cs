@@ -9,6 +9,7 @@ namespace LeventDurdali_HomeWork1
     public sealed class Address
     {
         public string addressLine, city, state;
+
         public Address(string addressLine, string city, string state)
         {
             this.addressLine = addressLine;
