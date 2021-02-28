@@ -14,7 +14,7 @@ namespace LeventDurdali_HomeWork1
         // 3.There has to be at least one has-a relation between the classes.
         public Address address; //Buyer HAS-A Address  
 
-        private Location now;
+        public Location now;
         public bool got_car;
 
         public void GetFullname()
@@ -45,9 +45,20 @@ namespace LeventDurdali_HomeWork1
         public void Display()
         {
             Console.WriteLine("FirstName: " + this.firstName + " LastName: " + this.lastName + "'s addres is this: " + this.address.addressLine + ", " + this.address.city + ", " + this.address.state + ".");
-            Console.WriteLine("Bought Car: {0} and the brand is: {1}", this.got_car, this.car_name);
-            Console.WriteLine("Current Location is: ");
-            now.Display();
+            if (this.got_car == false)
+            {
+                Console.WriteLine("The brand you are lookking at is: {0}", this.car_name);
+                Console.WriteLine("Current Location is: ");
+                now.Display();
+            }
+            else
+            {
+                Console.WriteLine("The Car you bought is: {0}", this.car_name);
+                Console.WriteLine("Your Current Location is: ");
+                now.Display();
+            }
+
+
 
         }
 

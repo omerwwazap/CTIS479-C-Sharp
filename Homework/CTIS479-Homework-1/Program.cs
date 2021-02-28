@@ -11,15 +11,19 @@ namespace LeventDurdali_HomeWork1
 
             //2.Add is-a relation between the classes
             //6.Override the base class method in the sub class and from the sub class overridden method, call the base class overridden method.
+            //5.Call the base class constructor from sub class
             RetailSalesPerson retailSalesPerson = new RetailSalesPerson("Levent", "Durdalı");
             retailSalesPerson.Sell();
             retailSalesPerson.Car_Develop();
 
-            Console.WriteLine("\n************\n");
+            Console.WriteLine("\n***************\n");
+
 
             RetailSalesPerson SalesPerson2 = new RetailSalesPerson("Levent", "Durdalı", 50); // 9. Implement at least one method which has optional parameters
             SalesPerson2.Sell();
             SalesPerson2.Car_Develop();
+
+            Console.WriteLine("\n************\n");
 
             //15.Create an use tuples
             var car_Properties_Skoda = (Brand: "Skoda", HP: 150, Type: "Hatchback", price: 100);
@@ -30,7 +34,7 @@ namespace LeventDurdali_HomeWork1
             string choosen = "";
             do
             {
-                Console.Write("\nEnter Car Numer to choose: \n");
+                Console.Write("Enter Car Numer to choose: \n");
                 Console.Write($"1 - {car_Properties_Skoda.Brand} - {car_Properties_Skoda.HP} - {car_Properties_Skoda.Type} - {car_Properties_Skoda.price}\n");
                 Console.Write($"2 - {car_Properties_Seat.Brand} - {car_Properties_Seat.HP} - {car_Properties_Seat.Type} - {car_Properties_Seat.price}\n");
                 Console.Write($"3 - Both Cars\n");
@@ -57,11 +61,11 @@ namespace LeventDurdali_HomeWork1
                 }
             } while (exit != 9);
 
-
             Console.WriteLine("\n************\n");
+
             Address a1 = new Address(addressLine: "Bilkent.....", city: "Ankara", state: "Ankara");
-            Location isim1_Loc_now = new Location(100, 0);
-            Buyer buys = new Buyer(lastName: "Ömer", firstName: "Levent", address: a1, now: isim1_Loc_now, got_car: false, car_name: choosen); // 10.Call the methods by using the named arguments
+            Location buyer_Loc_now = new Location(100, 0);
+            Buyer buys = new Buyer(lastName: "Ömer", firstName: "Levent", address: a1, now: buyer_Loc_now, got_car: false, car_name: choosen); // 10.Call the methods by using the named arguments
             buys.GetFullname();
             buys.Display();
 
@@ -71,6 +75,27 @@ namespace LeventDurdali_HomeWork1
             Console.WriteLine("The Location of your car is: ");
             car_loc.Display();
 
+            Location distanceto_car = buyer_Loc_now - car_loc;
+            Console.WriteLine("Your Distance to your car is: ");
+            double distance = Math.Round(Math.Sqrt(Math.Pow((distanceto_car.Y - buyer_Loc_now.Y), 2) + Math.Pow((distanceto_car.X - buyer_Loc_now.X), 2)), 1);
+            double distance_from_buyer;
+            //19.Create a method(s) with out parameters
+            distance_by_meters(distance, 2, out distance_from_buyer);
+            Console.WriteLine(distance_from_buyer + " meters.");
+            Console.WriteLine("Your Distance in coordinates are: ");
+            distanceto_car.Display();
+
+            Console.WriteLine("Since you are over 300 meters away from the car: ");
+
+            //17.Implement at least one extension method
+            if (distance_from_buyer.UseBus())
+            { // True if value is larger than 300meters
+                Console.WriteLine("Please use a bus");
+            }
+            else
+            {
+                Console.WriteLine("Please walk, walking is healty :)");
+            }
 
             //20.Create a method(s) so that it can be called with variable length of parameters.
             int cost = 0;
@@ -86,35 +111,22 @@ namespace LeventDurdali_HomeWork1
             {
                 cost = Car_cost(car_Properties_Seat.price, car_Properties_Skoda.price);
             }
-            Console.WriteLine("Cos of Your chosen car(s): " + cost);
+            Console.WriteLine("The Cost of Your choosen car(s): " + cost);
+            Console.WriteLine("************\n");
 
-            Location distanceto_car = isim1_Loc_now - car_loc;
-            Console.WriteLine("Your Distance to your car is: ");
-            double distance = Math.Round(Math.Sqrt(Math.Pow((distanceto_car.Y - isim1_Loc_now.Y), 2) + Math.Pow((distanceto_car.X - isim1_Loc_now.X), 2)), 1);
-            double distance_from_buyer;
-            //19.Create a method(s) with out parameters
-            distance_by_meters(distance, 2, out distance_from_buyer);
-            Console.WriteLine(distance_from_buyer + "meters.");
-            Console.WriteLine("Current Location is: ");
-            distanceto_car.Display();
-
-            if (distance_from_buyer.UseBus())
-            { // True if value is larger than 300meters
-                Console.WriteLine("Pls use a bus");
-            }
-            else
-            {
-                Console.WriteLine("The car is near, walking is healty :)");
-            }
             //19.Create a method(s) with in parameters
-            change_bought(buys);
+
+            Console.WriteLine("Showing all related info about the buyer and changing the database to bought");
+            change_bought(in buys);
             buys.Display();
 
             //19.Create a method(s) with ref parameters
+            Console.WriteLine("Oh no, an eror happened in the databse");
             mixup_inDatabase(ref buys);
             buys.Display();
 
-            Console.WriteLine("\n************");
+            Console.WriteLine("************\n");
+
             Re_Helper helper = new Re_Helper("Yardımcı1", "Yardımcı1");
             helper.Sell();
 
@@ -204,7 +216,9 @@ namespace LeventDurdali_HomeWork1
             buys.address.addressLine = "Lost ERROR";
             buys.address.city = "Lost ERROR";
             buys.address.state = "Lost ERROR";
-
+            buys.got_car = false;
+            buys.now.Y = 999;
+            buys.now.X = -999;
         }
 
 
