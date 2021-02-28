@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+//21.Create a generic class
 namespace CTIS479_Homework_1
 {
     class DataStore<T>

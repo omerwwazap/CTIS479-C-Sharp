@@ -1,5 +1,6 @@
 ﻿using CTIS479_Homework_1;
 using System;
+using System.Collections.Generic;
 
 namespace LeventDurdali_HomeWork1
 {
@@ -10,19 +11,17 @@ namespace LeventDurdali_HomeWork1
             Console.WriteLine("Levent Durdalı - Homework 1");
             Console.WriteLine("************\n");
 
-            DataStore<string> names = new DataStore<string>(5);
-
             //2.Add is-a relation between the classes
             //6.Override the base class method in the sub class and from the sub class overridden method, call the base class overridden method.
             //5.Call the base class constructor from sub class
-            RetailSalesPerson retailSalesPerson = new RetailSalesPerson("Levent", "Durdalı");
+            RetailSalesPerson retailSalesPerson = new RetailSalesPerson("Levent", "RetailSalesPerson");
             retailSalesPerson.Sell();
             retailSalesPerson.Car_Develop();
 
             Console.WriteLine("\n***************\n");
 
 
-            RetailSalesPerson SalesPerson2 = new RetailSalesPerson("Levent", "Durdalı", 50); // 9. Implement at least one method which has optional parameters
+            RetailSalesPerson SalesPerson2 = new RetailSalesPerson("Levent", "SalesPerson", 50); // 9. Implement at least one method which has optional parameters
             SalesPerson2.Sell();
             SalesPerson2.Car_Develop();
 
@@ -68,7 +67,7 @@ namespace LeventDurdali_HomeWork1
 
             Address a1 = new Address(addressLine: "Bilkent.....", city: "Ankara", state: "Ankara");
             Location buyer_Loc_now = new Location(100, 0);
-            Buyer buys = new Buyer(lastName: "Ömer", firstName: "Levent", address: a1, now: buyer_Loc_now, got_car: false, car_name: choosen); // 10.Call the methods by using the named arguments
+            Buyer buys = new Buyer(lastName: "Buyer", firstName: "Ömer", address: a1, now: buyer_Loc_now, got_car: false, car_name: choosen); // 10.Call the methods by using the named arguments
             buys.GetFullname();
             buys.Display();
 
@@ -167,6 +166,25 @@ namespace LeventDurdali_HomeWork1
                 }
             } while (exit != 9);
 
+            DataStore<string> names = new DataStore<string>(5);
+            names[0] = SalesPerson2.Fullname;
+            names[1] = retailSalesPerson.Fullname;
+            names[2] = buys.Fullname;
+
+            for (int i = 0; i < names.Length; i++)
+                Console.WriteLine(names[i]);
+
+
+            //11.Use at least one generic collection and display the sorted output
+            List<string> FullNames = new List<string>();
+            FullNames.Add(SalesPerson2.Fullname);
+            FullNames.Add(retailSalesPerson.Fullname);
+            FullNames.Add(buys.Fullname);
+            FullNames.Sort();
+            Console.WriteLine("No of People that interacted with another in the sale of the Car(s): " + FullNames.Count);
+
+            foreach (var el in FullNames)
+                Console.WriteLine(el);
 
         }
 

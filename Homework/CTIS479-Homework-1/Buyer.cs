@@ -21,6 +21,15 @@ namespace LeventDurdali_HomeWork1
         {
             Console.WriteLine("Hi! Mi name is {0} {1}, and I want a car", this.firstName, this.lastName);
         }
+
+        public string Fullname
+        {
+            get
+            {
+                return string.Format("{0} {1}", this.firstName, this.lastName);
+            }
+        }
+
         public Buyer(string firstName, string lastName)
         {
             this.firstName = firstName;
