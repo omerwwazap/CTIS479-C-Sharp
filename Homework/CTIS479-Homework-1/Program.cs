@@ -166,13 +166,15 @@ namespace LeventDurdali_HomeWork1
                 }
             } while (exit != 9);
 
+            //12.Create a static class with static constructor. This static constructor can be used to add objects to the collection. (Static constructor is in Buyer Class)
+            BuyerCollection buyerCollection = new BuyerCollection();
+            buyerCollection[0] = new Buyer("NotLevent", "New Buyer");
+            buyerCollection[1] = new Buyer("NotLevent-2", "New New Buyer");
+            buyerCollection[2] = buys;
 
-            DataStore<string> names = new DataStore<string>();
-
-
-            Console.WriteLine("No of People that interacted with another in the sale of the Car(s): " + names.Length);
-            for (int i = 0; i < names.Length; i++)
-                Console.WriteLine(names[i]);
+            Console.WriteLine("No of People that interacted with another in the sale of the Car(s): " + buyerCollection.Count);
+            for (int i = 0; i < buyerCollection.Count; i++)
+                Console.WriteLine(buyerCollection[i].Fullname);
 
 
 
