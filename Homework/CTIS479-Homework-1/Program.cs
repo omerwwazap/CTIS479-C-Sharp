@@ -215,7 +215,7 @@ namespace LeventDurdali_HomeWork1
                     Console.WriteLine("Sorry the Customer(buyer) didnt like you, 0/5 stars\n");
                     break;
                 case EmpTypeEnum.Customer:
-                    Console.WriteLine("Have a nice day\n");
+                    Console.WriteLine("Have a nice day dear Customer\n");
                     break;
             }
         }
