@@ -235,11 +235,13 @@ namespace LeventDurdali_HomeWork1
         {
             ans = Math.Round(x, y);
         }
+
         //19.Create a method(s) with in parameters
         public static void change_bought(in Buyer buys)
         {
             buys.got_car = true;
         }
+
         //19.Create a method(s) with ref, out and in parameters
         public static void mixup_inDatabase(ref Buyer buys)
         {
@@ -250,7 +252,5 @@ namespace LeventDurdali_HomeWork1
             buys.now.Y = 999;
             buys.now.X = -999;
         }
-
-
     }
 }
