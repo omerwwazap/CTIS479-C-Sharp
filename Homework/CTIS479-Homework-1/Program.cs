@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CTIS479_Homework_1;
+using System;
 
 namespace LeventDurdali_HomeWork1
 {
@@ -8,6 +9,8 @@ namespace LeventDurdali_HomeWork1
         {
             Console.WriteLine("Levent Durdalı - Homework 1");
             Console.WriteLine("************\n");
+
+            DataStore<string> names = new DataStore<string>(5);
 
             //2.Add is-a relation between the classes
             //6.Override the base class method in the sub class and from the sub class overridden method, call the base class overridden method.
