@@ -18,6 +18,10 @@ namespace LeventDurdali_HomeWork1
             retailSalesPerson.Sell();
             retailSalesPerson.Car_Develop();
 
+            Re_Helper helper = new Re_Helper("Yardımcı1", "Yardımcı1");
+            Console.WriteLine();
+            helper.Sell();
+
             Console.WriteLine("\n***************\n");
 
 
@@ -45,19 +49,19 @@ namespace LeventDurdali_HomeWork1
                 exit = Convert.ToInt32(val);
                 if (exit == 1)
                 {
-                    Console.Write("\nChoosen: {0} \n", car_Properties_Skoda.Brand);
+                    Console.Write("Choosen: {0} ", car_Properties_Skoda.Brand);
                     choosen = car_Properties_Skoda.Brand;
                     break;
                 }
                 if (exit == 2)
                 {
-                    Console.Write("\nChoosen: {0} \n", car_Properties_Seat.Brand);
+                    Console.Write("Choosen: {0} ", car_Properties_Seat.Brand);
                     choosen = car_Properties_Seat.Brand;
                     break;
                 }
                 if (exit == 3)
                 {
-                    Console.Write("\nChoosen: {0} \n", car_Properties_Seat.Brand);
+                    Console.Write("Choosen: {0} ", car_Properties_Seat.Brand);
                     choosen = car_Properties_Skoda.Brand + " and " + car_Properties_Seat.Brand;
                     break;
                 }
@@ -65,9 +69,10 @@ namespace LeventDurdali_HomeWork1
 
             Console.WriteLine("\n************\n");
 
-            Address a1 = new Address(addressLine: "Bilkent.....", city: "Ankara", state: "Ankara");
+            Address buyer1_add = new Address(addressLine: "Bilkent.....", city: "Ankara", state: "Ankara");
             Location buyer_Loc_now = new Location(100, 0);
-            Buyer buys = new Buyer(lastName: "Buyer", firstName: "Ömer", address: a1, now: buyer_Loc_now, got_car: false, car_name: choosen); // 10.Call the methods by using the named arguments
+            // 10.Call the methods by using the named arguments
+            Buyer buys = new Buyer(lastName: "Main-Buyer", firstName: "Ömer", address: buyer1_add, now: buyer_Loc_now, got_car: false, car_name: choosen);
             buys.GetFullname();
             buys.Display();
 
@@ -129,9 +134,6 @@ namespace LeventDurdali_HomeWork1
 
             Console.WriteLine("************\n");
 
-            Re_Helper helper = new Re_Helper("Yardımcı1", "Yardımcı1");
-            helper.Sell();
-
 
             //14.Create at least one enum and use it in your application.
             EmpTypeEnum Helper = EmpTypeEnum.Helper;
@@ -142,7 +144,7 @@ namespace LeventDurdali_HomeWork1
             int exit2;
             do
             {
-                Console.Write("\nTime For feed back choose your occupation: \n");
+                Console.Write("Time For feed back choose your occupation: \n");
                 Console.Write($"1 - Customer\n");
                 Console.Write($"2 - Helper\n");
                 Console.Write($"3 - Salesman\n");
@@ -166,28 +168,34 @@ namespace LeventDurdali_HomeWork1
                 }
             } while (exit != 9);
 
+            Console.WriteLine("************\n");
+
             //12.Create a static class with static constructor. This static constructor can be used to add objects to the collection. (Static constructor is in Buyer Class)
             BuyerCollection buyerCollection = new BuyerCollection();
-            buyerCollection[0] = new Buyer("NotLevent", "New Buyer");
-            buyerCollection[1] = new Buyer("NotLevent-2", "New New Buyer");
-            buyerCollection[2] = buys;
-
-            Console.WriteLine("No of People that interacted with another in the sale of the Car(s): " + buyerCollection.Count);
+            buyerCollection[0] = new Buyer("Ahmet", "New Buyer");
+            buyerCollection[1] = new Buyer("Furkan", "New New Buyer");
+            Console.WriteLine("Number of new People looking for cars is: " + buyerCollection.Count);
             for (int i = 0; i < buyerCollection.Count; i++)
-                Console.WriteLine(buyerCollection[i].Fullname);
+                Console.WriteLine("Person number: {0} {1}", i + 1, buyerCollection[i].Fullname);
 
-
+            Console.WriteLine("\n************\n");
 
             //11.Use at least one generic collection and display the sorted output
             List<string> FullNames = new List<string>();
             FullNames.Add(SalesPerson2.Fullname);
             FullNames.Add(retailSalesPerson.Fullname);
             FullNames.Add(buys.Fullname);
+            FullNames.Add(buyerCollection[0].Fullname);
+            FullNames.Add(buyerCollection[1].Fullname);
             FullNames.Sort();
-            Console.WriteLine("No of People that interacted with another in the sale of the Car(s): " + FullNames.Count);
-
+            Console.WriteLine("Number of People that interacted with another + the Number of new People looking for cars is: " + FullNames.Count);
+            int inum = 1;
             foreach (var el in FullNames)
-                Console.WriteLine(el);
+            {
+                Console.WriteLine("Person number: {0} - {1}", inum, el);
+                inum++;
+            }
+
 
         }
 
@@ -203,13 +211,13 @@ namespace LeventDurdali_HomeWork1
             switch (e)
             {
                 case EmpTypeEnum.Helper:
-                    Console.WriteLine("Congrats you recived a 5/5 stars from the Customer(buyer)");
+                    Console.WriteLine("Congrats you recived a 5/5 stars from the Customer(buyer)\n");
                     break;
                 case EmpTypeEnum.Salesman:
-                    Console.WriteLine("Sorry the Customer(buyer) didnt like you, 0/5 stars");
+                    Console.WriteLine("Sorry the Customer(buyer) didnt like you, 0/5 stars\n");
                     break;
                 case EmpTypeEnum.Customer:
-                    Console.WriteLine("Have a nice day");
+                    Console.WriteLine("Have a nice day\n");
                     break;
             }
         }
