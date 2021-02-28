@@ -1,9 +1,6 @@
-﻿using LeventDurdali_HomeWork1;
-using System;
-using System.Collections;
-using System.Text;
+﻿using System.Collections;
 
-namespace CTIS479_Homework_1
+namespace LeventDurdali_HomeWork1
 {
     class BuyerCollection : IEnumerable
     {

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 //1.Create at least 3 classes Buyer,Salesman,RetailSalesPerson,Re-helper
 namespace LeventDurdali_HomeWork1

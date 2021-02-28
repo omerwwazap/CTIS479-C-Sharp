@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 //13.Create at least one structure and use it in your application.
 //18.Implement at least one operator overload

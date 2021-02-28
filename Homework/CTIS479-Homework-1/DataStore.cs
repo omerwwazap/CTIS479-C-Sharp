@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 //21.Create a generic class
 //16.Implement at least one indexer
-namespace CTIS479_Homework_1
+namespace LeventDurdali_HomeWork1
 {
     class DataStore<T>
     {

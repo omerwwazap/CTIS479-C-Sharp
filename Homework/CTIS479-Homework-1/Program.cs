@@ -1,5 +1,4 @@
-﻿using CTIS479_Homework_1;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace LeventDurdali_HomeWork1
@@ -195,8 +194,6 @@ namespace LeventDurdali_HomeWork1
                 Console.WriteLine("Person number: {0} - {1}", inum, el);
                 inum++;
             }
-
-
         }
 
 
