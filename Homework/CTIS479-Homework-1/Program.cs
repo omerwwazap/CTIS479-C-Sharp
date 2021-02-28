@@ -7,7 +7,8 @@ namespace LeventDurdali_HomeWork1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Levent Durdalı - Homework 1");
+            Console.WriteLine("Levent Durdalı - Homework 1 - 21702600");
+            //Implemented all 21 Items, sorry for bad programming.
             Console.WriteLine("************\n");
 
             //2.Add is-a relation between the classes
@@ -17,7 +18,7 @@ namespace LeventDurdali_HomeWork1
             retailSalesPerson.Sell();
             retailSalesPerson.Car_Develop();
 
-            Re_Helper helper = new Re_Helper("Yardımcı1", "Yardımcı1");
+            Re_Helper helper = new Re_Helper("Helper-11", "Helper-11");
             Console.WriteLine();
             helper.Sell();
 

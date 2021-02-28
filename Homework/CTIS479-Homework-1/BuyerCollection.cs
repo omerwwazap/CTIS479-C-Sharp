@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 
+//16.Implement at least one indexer
 namespace LeventDurdali_HomeWork1
 {
     class BuyerCollection : IEnumerable
