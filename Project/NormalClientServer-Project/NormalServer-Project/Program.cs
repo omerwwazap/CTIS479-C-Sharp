@@ -11,6 +11,9 @@ namespace NormalServer_Project
         {
             TcpListener listener = null;
             string ipAdd = string.Empty;
+
+            IPAddress ip_address_def = IPAddress.Parse("127.0.0.1"); //Default
+            int port = 8080; //Default
             try
             {
                 Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is 8000): ");
@@ -19,13 +22,13 @@ namespace NormalServer_Project
                 if (ipAdd == "")
                 {
                     Console.WriteLine("Choosen Defult IP addres :]");
-                    listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 8080);
+                    listener = new TcpListener(ip_address_def, port);
                     listener.Start();
                 }
                 else
                 {
                     Console.WriteLine("Choosen IP addres" + ipAdd);
-                    listener = new TcpListener(IPAddress.Parse(ipAdd), 8080);
+                    listener = new TcpListener(IPAddress.Parse(ipAdd), port);
                     listener.Start();
                 }
 
@@ -47,6 +50,7 @@ namespace NormalServer_Project
                     {
                         Console.WriteLine("From client -> " + s);
                         writer.WriteLine("From server -> " + s);
+                        Console.WriteLine("Client connected with IP {0}", client.Client.LocalEndPoint); //Show Connected IP
                         writer.Flush();
                     }
                     reader.Close();

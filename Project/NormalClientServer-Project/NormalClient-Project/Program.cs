@@ -12,6 +12,9 @@ namespace NormalClient_Project
 
             string ipAdd = string.Empty;
             TcpClient client = new TcpClient();
+
+            IPAddress ip_address_def = IPAddress.Parse("127.0.0.1"); //Default
+            int port = 8080; //Default
             try
             {
                 Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is  8000): ");
@@ -20,13 +23,12 @@ namespace NormalClient_Project
                 if (ipAdd == "")
                 {
                     Console.WriteLine("Choosen Defult IP addres :]");
-                    client = new TcpClient("127.0.0.1", 8080);
+                    client = new TcpClient(ip_address_def.ToString(), port);
                 }
                 else
                 {
                     Console.WriteLine("Choosen IP addres" + ipAdd);
-                    client = new TcpClient(ipAdd, 8080);
-
+                    client = new TcpClient(ipAdd, port);
                 }
 
                 StreamReader reader = new StreamReader(client.GetStream());
