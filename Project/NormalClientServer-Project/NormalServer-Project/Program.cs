@@ -29,15 +29,15 @@ namespace NormalServer_Project
                     listener.Start();
                 }
 
-                Console.WriteLine("EchoServer started...");
+                Console.WriteLine("Server started :]");
 
                 while (true)
                 {
-                    Console.WriteLine("Waiting for client connections... :]");
+                    Console.WriteLine("Waiting for client connections :]");
 
                     TcpClient client = listener.AcceptTcpClient();
 
-                    Console.WriteLine("Accepted new client connection... :]");
+                    Console.WriteLine("Wahoo new client connection :]");
 
                     StreamReader reader = new StreamReader(client.GetStream());
                     StreamWriter writer = new StreamWriter(client.GetStream());
@@ -56,17 +56,17 @@ namespace NormalServer_Project
             }//try
             catch (FormatException e)
             {
-                Console.WriteLine("Not an IP address closing the server... :(");
+                Console.WriteLine("Not an IP address closing the server :[");
                 //Console.WriteLine(e);
             }
             catch (SocketException e)
             {
-                Console.WriteLine("Not an IP address closing the server... :(");
+                Console.WriteLine("Not an IP address closing the server :[");
                 //Console.WriteLine(e);
             }
             catch (IOException e)
             {
-                Console.WriteLine("Client Connection has been interrupted, closing the server");
+                Console.WriteLine("Client Connection has been interrupted, closing the server :[");
                 //Console.WriteLine(e);
             }
             finally

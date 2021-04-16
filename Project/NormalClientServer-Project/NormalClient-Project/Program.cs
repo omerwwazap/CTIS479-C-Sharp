@@ -19,7 +19,7 @@ namespace NormalClient_Project
 
                 if (ipAdd == "")
                 {
-                    Console.WriteLine("Choosen Defult IP addres");
+                    Console.WriteLine("Choosen Defult IP addres :]");
                     client = new TcpClient("127.0.0.1", 8080);
                 }
                 else
@@ -35,7 +35,7 @@ namespace NormalClient_Project
                 string s = string.Empty;
                 while (!s.Equals("Exit") || !s.Equals("exit"))
                 {
-                    Console.Write("Enter something to send to the server: ");
+                    Console.Write("Enter something to send: ");
                     s = Console.ReadLine();
                     Console.WriteLine();
                     writer.WriteLine(s);
@@ -49,17 +49,17 @@ namespace NormalClient_Project
             }//try
             catch (FormatException e)
             {
-                Console.WriteLine("Not an IP address closing the server... :(");
+                Console.WriteLine("Not an IP address closing the server.. :[");
                 //Console.WriteLine(e);
             }
             catch (SocketException e)
             {
-                Console.WriteLine("Not an IP address closing the server... :(");
+                Console.WriteLine("Not an IP address closing the server :[");
                 //Console.WriteLine(e);
             }
             catch (IOException e)
             {
-                Console.WriteLine("Client Connection has been interrupted, closing the server");
+                Console.WriteLine("Client Connection has been interrupted, closing the server :[");
                 //Console.WriteLine(e);
             }
         }//Main
