@@ -53,7 +53,7 @@ namespace NormalServer_Project
                     writer.Close();
                     client.Close();
                 }
-            }
+            }//try
             catch (FormatException e)
             {
                 Console.WriteLine("Not an IP address closing the server... :(");
@@ -76,6 +76,6 @@ namespace NormalServer_Project
                     listener.Stop();
                 }
             }
-        }
+        }//Main()
     }
 }

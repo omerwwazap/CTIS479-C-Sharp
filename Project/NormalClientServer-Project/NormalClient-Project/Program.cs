@@ -46,7 +46,7 @@ namespace NormalClient_Project
                 reader.Close();
                 writer.Close();
                 client.Close();
-            }
+            }//try
             catch (FormatException e)
             {
                 Console.WriteLine("Not an IP address closing the server... :(");
@@ -62,6 +62,6 @@ namespace NormalClient_Project
                 Console.WriteLine("Client Connection has been interrupted, closing the server");
                 //Console.WriteLine(e);
             }
-        }
+        }//Main
     }
 }
