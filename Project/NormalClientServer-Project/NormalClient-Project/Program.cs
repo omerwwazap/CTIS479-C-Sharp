@@ -65,5 +65,5 @@ namespace NormalClient_Project
                 //Console.WriteLine(e);
             }
         }//Main
-    }
-}
+    }//class
+}//namespace

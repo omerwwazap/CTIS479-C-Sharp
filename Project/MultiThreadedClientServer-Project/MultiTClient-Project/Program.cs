@@ -9,6 +9,8 @@ namespace MultiTClient_Project
     {
         private static void Main(string[] args)
         {
+            Console.Title = "Multi Thread Client Program";
+
             IPAddress ip_address = IPAddress.Parse("127.0.0.1"); //Default
             int port = 8080; //Default
 

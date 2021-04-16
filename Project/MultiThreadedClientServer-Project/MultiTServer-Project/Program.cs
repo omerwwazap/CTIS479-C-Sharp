@@ -10,6 +10,7 @@ namespace MultiTServer_Project
     {
         private static void Main(string[] args)
         {
+            Console.Title = "Multi Thread Server Program";
             TcpListener listener = null;
             int port = 8080;
             try
