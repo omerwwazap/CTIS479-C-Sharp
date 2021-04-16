@@ -14,7 +14,7 @@ namespace NormalClient_Project
             TcpClient client = new TcpClient();
             try
             {
-                Console.Write("Enter Your Ip address or leave blank for 127.0.0.1 (Port is  8000): ");
+                Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is  8000): ");
                 ipAdd = Console.ReadLine();
 
                 if (ipAdd == "")

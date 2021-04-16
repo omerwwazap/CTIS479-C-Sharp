@@ -13,12 +13,12 @@ namespace NormalServer_Project
             string ipAdd = string.Empty;
             try
             {
-                Console.Write("Enter Your Ip address or leave blank for 127.0.0.1 (Port is  8000): ");
+                Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is 8000): ");
                 ipAdd = Console.ReadLine();
 
                 if (ipAdd == "")
                 {
-                    Console.WriteLine("Choosen Defult IP addres");
+                    Console.WriteLine("Choosen Defult IP addres :]");
                     listener = new TcpListener(IPAddress.Parse("127.0.0.1"), 8080);
                     listener.Start();
                 }
@@ -33,11 +33,11 @@ namespace NormalServer_Project
 
                 while (true)
                 {
-                    Console.WriteLine("Waiting for client connections...");
+                    Console.WriteLine("Waiting for client connections... :]");
 
                     TcpClient client = listener.AcceptTcpClient();
 
-                    Console.WriteLine("Accepted new client connection...");
+                    Console.WriteLine("Accepted new client connection... :]");
 
                     StreamReader reader = new StreamReader(client.GetStream());
                     StreamWriter writer = new StreamWriter(client.GetStream());
