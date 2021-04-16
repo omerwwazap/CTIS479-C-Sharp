@@ -71,6 +71,8 @@ namespace MultiTServer_Project
             // Have only one execption unlike the Single Threaded Server Program becasue we dont have any IP inputs here
             catch (IOException)
             {
+            // Have only one exception unlike the Single Threaded Server Program because we don't have any IP inputs here
+            catch (IOException){
                 Console.WriteLine("Problem with client communication :[");
             }
             finally
