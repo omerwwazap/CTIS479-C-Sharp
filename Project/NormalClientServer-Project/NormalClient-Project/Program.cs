@@ -13,8 +13,8 @@ namespace NormalClient_Project
             string ipAdd = string.Empty;
             TcpClient client = new TcpClient();
 
-            IPAddress ip_address_def = IPAddress.Parse("127.0.0.1"); //Default
-            int port = 8080; //Default
+            IPAddress ip_address_def = IPAddress.Parse("127.0.0.1");
+            int port = 8080;
             try
             {
                 Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is  8080): ");
