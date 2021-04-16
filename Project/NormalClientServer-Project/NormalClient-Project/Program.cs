@@ -9,7 +9,7 @@ namespace NormalClient_Project
     {
         static void Main(string[] args)
         {
-
+            Console.Title = "Client Program";
             string ipAdd = string.Empty;
             TcpClient client = new TcpClient();
 
@@ -17,7 +17,7 @@ namespace NormalClient_Project
             int port = 8080; //Default
             try
             {
-                Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is  8000): ");
+                Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is  8080): ");
                 ipAdd = Console.ReadLine();
 
                 if (ipAdd == "")

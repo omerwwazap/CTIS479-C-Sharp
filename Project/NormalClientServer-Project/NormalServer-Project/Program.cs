@@ -9,6 +9,7 @@ namespace NormalServer_Project
     {
         private static void Main(string[] args)
         {
+            Console.Title = "Server Program";
             TcpListener listener = null;
             string ipAdd = string.Empty;
 
@@ -16,7 +17,7 @@ namespace NormalServer_Project
             int port = 8080; //Default
             try
             {
-                Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is 8000): ");
+                Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is 8080): ");
                 ipAdd = Console.ReadLine();
 
                 if (ipAdd == "")

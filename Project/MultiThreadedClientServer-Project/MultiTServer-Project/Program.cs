@@ -11,12 +11,13 @@ namespace MultiTServer_Project
         private static void Main(string[] args)
         {
             TcpListener listener = null;
+            int port = 8080;
             try
             {
                 //Unlike our Single Threaded Server IPAddress.Any will listen to all Netwotk Interfaces and their Ip address
                 //Ex. Wifi Module is 192.168.1.2 and Ethernet Interface is 172.0.0.1 
                 //IPAddress.Any will listen to both
-                listener = new TcpListener(IPAddress.Any, 8080);
+                listener = new TcpListener(IPAddress.Any, port);
                 listener.Start();
                 Console.WriteLine("Multi Threaded Server Has Started... :]");
                 while (true)

@@ -15,7 +15,7 @@ namespace MultiTClient_Project
             string ipAdd = string.Empty;
             try
             {
-                Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is  8000): ");
+                Console.Write("Enter Your IP address or leave blank for 127.0.0.1 (Port is  8080): ");
                 ipAdd = Console.ReadLine();
 
                 if (ipAdd == "")
