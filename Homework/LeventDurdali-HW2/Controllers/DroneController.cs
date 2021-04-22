@@ -9,11 +9,12 @@ using System.Threading.Tasks;
 
 namespace LeventDurdali_HW2.Controllers
 {
-    public class HomeController : Controller
+    public class DroneController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ILogger<DroneController> _logger;
+
+        public DroneController(ILogger<DroneController> logger)
         {
             _logger = logger;
         }
@@ -22,17 +23,6 @@ namespace LeventDurdali_HW2.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult Drone()
-        {
-            return View();
-        }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
