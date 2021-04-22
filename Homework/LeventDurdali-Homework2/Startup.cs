@@ -24,6 +24,7 @@ namespace LeventDurdali_Homework2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<DroneDBContext>(opts => opts.UseSqlServer(Configuration["ConnectionStrings:DroneDBConnection"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
