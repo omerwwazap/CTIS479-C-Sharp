@@ -1,9 +1,12 @@
-﻿using LeventDurdali_HW2.Models;
+﻿using LeventDurdali_HW2.Infrastructure;
+using LeventDurdali_HW2.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 // Helicopter Model Controller with Index, Detail, Create, Edit and Delete
@@ -23,6 +26,30 @@ namespace LeventDurdali_HW2.Controllers
         }
         public IActionResult Index()
         {
+
+            /*
+            List<Helicopter> productListA = new List<Helicopter>()
+            {
+                new Helicopter(){Name="HP laserJet 1200", Description="e123",Category="Cat",Price=1110},
+                new Helicopter(){Name="Acer", Description="asde123",Category="Cat",Price=1110}
+            };
+
+
+            List<Helicopter> productListB = new List<Helicopter>()
+            {
+                 new Helicopter(){Name="HP laserJet 1200", Description="e123",Category="Cat",Price=1110},
+                new Helicopter(){Name="Acer", Description="asde123",Category="Cat",Price=1110}
+            };
+
+            string jsonProducts = JsonSerializer.Serialize(productListA);
+            HttpContext.Session.SetString("SessionProductsA", jsonProducts);
+
+            HttpContext.Session.SetJson("SessionProductsB", productListB);
+
+            HttpContext.Session.SetString("SessionVariable1", "Testing123");
+            HttpContext.Session.Remove("SessionVariable1");
+            */
+
             var products = _context.Helicopters.ToList();
             return View(products);
         }
