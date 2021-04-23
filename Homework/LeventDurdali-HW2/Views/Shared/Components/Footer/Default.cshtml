@@ -1,12 +1,11 @@
 ﻿@model IEnumerable<string>
 
-<footer class="border-top footer text-muted">
+<footer class="border-top footer my-background">
     <div class="container">
         @foreach (string menuItem in Model)
-            @menuItem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            @menuItem
     </div>
 </footer>
-
 
 @*
     Prints Footer text from ViewComponents and adds the Privacy link for a more professional look
