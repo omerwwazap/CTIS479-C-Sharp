@@ -25,40 +25,28 @@ namespace LeventDurdali_HW2.Controllers
         public IActionResult Index()
         {
 
-            List<Helicopter> productListA = new List<Helicopter>()
-            {
-                new Helicopter(){Name="HP laserJet 1200", Description="e123",Category="Cat",Price=1110},
-                new Helicopter(){Name="Acer", Description="asde123",Category="Cat",Price=1110}
-            };
-
             List<Helicopter> productListB = new List<Helicopter>()
             {
                 new Helicopter(){Name="HP laserJet 1200", Description="e123",Category="Cat",Price=1110},
                 new Helicopter(){Name="Acer", Description="asde123",Category="Cat",Price=1110}
             };
 
-            string jsonProducts = JsonSerializer.Serialize(productListA);
-            HttpContext.Session.SetString("SessionProductsA", jsonProducts);
-
             HttpContext.Session.SetJson("SessionProductsB", productListB);
 
             HttpContext.Session.SetString("SessionVariable1", "Testing123");
-            HttpContext.Session.Remove("SessionVariable1");
 
             return View();
         }
 
         public IActionResult SessionDisplay()
         {
-            string jsonProducts = HttpContext.Session.GetString("SessionProductsA");
-            List<Helicopter> productList = JsonSerializer.Deserialize<List<Helicopter>>(jsonProducts);
 
             List<Helicopter> productList2 = HttpContext.Session.GetJson<List<Helicopter>>("SessionProductsB");
 
             if (HttpContext.Session.GetString("SessionVariable1") != null)
                 ViewBag.Message = HttpContext.Session.GetString("SessionVariable1");
             else
-                ViewBag.Message = "No message";
+                ViewBag.Message = "No Message was added to the session or The Session was deleted beforehand";
 
             return View(productList2);
 
@@ -67,13 +55,10 @@ namespace LeventDurdali_HW2.Controllers
         public IActionResult Clear()
         {
             HttpContext.Session.Clear();
-            return View("Privacy");
+            return View("SessionDisplay");
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
