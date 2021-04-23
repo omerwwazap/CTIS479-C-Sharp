@@ -8,9 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace LeventDurdali_HW2.Models
 {
-    /*
-	 SeedData: To populate the database and provide some sample data
-	 */
+
+    // SeedData: To populate the database and provide some sample data
+    // Adds 5 entries for Drone and Helicopter models
     public class SeedData
     {
         public static void EnsurePopulated(IApplicationBuilder app)

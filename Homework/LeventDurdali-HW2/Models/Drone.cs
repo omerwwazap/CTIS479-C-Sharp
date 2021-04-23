@@ -5,6 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
+//Drone Model with Required Validation   
+//Each Validation has a diffrent error Message to display
 namespace LeventDurdali_HW2.Models
 {
     public class Drone

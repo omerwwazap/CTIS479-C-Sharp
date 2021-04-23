@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+// Helicopter Model Controller with Index, Detail, Create, Edit and Delete
 namespace LeventDurdali_HW2.Controllers
 {
     public class HelicopterController : Controller

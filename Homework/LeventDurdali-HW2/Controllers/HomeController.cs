@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
+//Default Home Controller 
 namespace LeventDurdali_HW2.Controllers
 {
     public class HomeController : Controller
@@ -27,12 +28,6 @@ namespace LeventDurdali_HW2.Controllers
         {
             return View();
         }
-
-        public IActionResult Drone()
-        {
-            return View();
-        }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

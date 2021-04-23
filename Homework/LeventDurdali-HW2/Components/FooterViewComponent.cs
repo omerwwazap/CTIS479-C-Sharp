@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+// This ViewComponent is used for adding a "Footer" the website
 namespace LeventDurdali_HW2.Components
 {
     public class FooterViewComponent : ViewComponent
