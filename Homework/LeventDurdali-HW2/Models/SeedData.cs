@@ -15,8 +15,7 @@ namespace LeventDurdali_HW2.Models
     {
         public static void EnsurePopulated(IApplicationBuilder app)
         {
-            DroneDBContext context = app.ApplicationServices.CreateScope().
-                                        ServiceProvider.GetRequiredService<DroneDBContext>();
+            DroneDBContext context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<DroneDBContext>();
             if (!context.Drones.Any())
             {
                 context.Drones.AddRange(
@@ -52,6 +51,47 @@ namespace LeventDurdali_HW2.Models
                 {
                     Name = "XQ-58A Valkyrie",
                     Description = "U.S. Military UAV",
+                    Category = "HALE",
+                    Price = 79500
+                }
+                );
+                context.SaveChanges();
+            }
+            if (!context.Helicopters.Any())
+            {
+                context.Helicopters.AddRange(
+                new Helicopter
+                {
+                    Name = "T-129 Attak",
+                    Description = "Turkish Military",
+                    Category = "Test",
+                    Price = 275
+                },
+                new Helicopter
+                {
+                    Name = "RQ-4 Global Hawk",
+                    Description = "U.S. MilitaryV",
+                    Category = "HALE",
+                    Price = 48.95m
+                },
+                new Helicopter
+                {
+                    Name = "MQ-9 Reaper (Predator B)",
+                    Description = "U.S. Military",
+                    Category = "MALE",
+                    Price = 19.50m
+                },
+                new Helicopter
+                {
+                    Name = "Kronshtadt Orion",
+                    Description = "Russian Millitary",
+                    Category = "HALE",
+                    Price = 34.95m
+                },
+                new Helicopter
+                {
+                    Name = "XQ-58A Valkyrie",
+                    Description = "Russian Military ",
                     Category = "HALE",
                     Price = 79500
                 }
