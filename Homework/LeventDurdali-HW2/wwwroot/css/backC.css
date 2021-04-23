@@ -2,6 +2,7 @@
     background: gold;
     color: black;
 }
+
 .shadow {
     box-shadow: 0 .5rem 1rem rgba(234, 52, 52, 0.15) !important;
     border-bottom: 1px solid #ecc8c8 !important;

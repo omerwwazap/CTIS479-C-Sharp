@@ -6,6 +6,11 @@
     font-weight: normal;
     color: black;
 }
+
 #createbtn {
     float: right;
+}
+
+#imageSize {
+    max-width: 500px;
 }
