@@ -51,12 +51,20 @@ namespace LeventDurdali_HW2
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                   name: "drone",
+                   pattern: "{controller=Drone}/{action=Index}/pageNum{page:int}");
+                endpoints.MapControllerRoute(
+                    name: "helicopter",
+                    pattern: "{controller=Helicopter}/{action=Index}/pageNum{page:int}");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

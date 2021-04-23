@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Helicopter>
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewBag.Message </h1>
+
+@if (Model != null)
+{
+    @foreach (Helicopter pr in Model)
+    {
+        <p> @pr.Name  @pr.Description</p>
+    }
+}
+else
+{
+    <p> Session is empty</p>
+}
