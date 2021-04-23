@@ -15,10 +15,13 @@ namespace LeventDurdali_HW2.Models
         [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
+        [Required]
         public string Category { get; set; }
 
+        [Required]
         [Column(TypeName = "decimal(8,2)")]
         public decimal Price { get; set; }
     }

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Helicopter>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome to Our UAV Database</h1>
+</div>
+
+<td><a calss="btn-primary" asp-controller="Helicopter" asp-action="Create">Create</a></td>
+
+<table class="table table-striped table-hover">
+    @foreach (Helicopter p in Model)
+    {
+        <tr>
+            <td>@p.Name</td>
+            <td>@p.Description</td>
+            <td>@p.Price</td>
+            <td><a calss="btn-primary" asp-controller="Drone" asp-action="Detail" asp-route-id="@p.HelicopterId">Detail</a></td>
+            <td><a calss="btn-primary" asp-controller="Drone" asp-action="Edit" asp-route-id="@p.HelicopterId">Edit</a></td>
+            <td><a calss="btn-primary" asp-controller="Drone" asp-action="Delete" asp-route-id="@p.HelicopterId">Delete</a></td>
+        </tr>
+    }
+</table>
+
+<div class="text-center">
+    <img class="img-thumbnail" src="~/images/heli.png" />
+</div>
