@@ -73,27 +73,6 @@ namespace LeventDurdali_HW2.Models
                     Description = "U.S. MilitaryV",
                     Category = "HALE",
                     Price = 48.95m
-                },
-                new Helicopter
-                {
-                    Name = "MQ-9 Reaper (Predator B)",
-                    Description = "U.S. Military",
-                    Category = "MALE",
-                    Price = 19.50m
-                },
-                new Helicopter
-                {
-                    Name = "Kronshtadt Orion",
-                    Description = "Russian Millitary",
-                    Category = "HALE",
-                    Price = 34.95m
-                },
-                new Helicopter
-                {
-                    Name = "XQ-58A Valkyrie",
-                    Description = "Russian Military ",
-                    Category = "HALE",
-                    Price = 79500
                 }
                 );
                 context.SaveChanges();

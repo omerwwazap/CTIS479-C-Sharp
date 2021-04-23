@@ -13,6 +13,8 @@ namespace LeventDurdali_HW2.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        public object JsonConvert { get; private set; }
+
         DroneDBContext _context;
         public HelicopterController(ILogger<HomeController> logger, DroneDBContext context)
         {
