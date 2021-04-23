@@ -27,12 +27,14 @@ namespace LeventDurdali_HW2
         {
             services.AddControllersWithViews();
             services.AddDbContext<DroneDBContext>(opts => opts.UseSqlServer(Configuration["ConnectionStrings:DroneConnection"]));
-
+            services.AddScoped<IHelicopterRepository, EFHelicopterRepository>();
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromDays(1); // It depends on user requirements.
                                                             //options.CookieName = ".My.Session"; // Give a cookie name for session which will be visible in request payloads.
             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

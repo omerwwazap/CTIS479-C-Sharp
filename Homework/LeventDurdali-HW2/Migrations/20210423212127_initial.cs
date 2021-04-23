@@ -2,7 +2,7 @@
 
 namespace LeventDurdali_HW2.Migrations
 {
-    public partial class ModelDBContext : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
