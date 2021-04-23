@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeventDurdali_HW2.Migrations
 {
     [DbContext(typeof(DroneDBContext))]
-    [Migration("20210423084044_ModelDBContext")]
+    [Migration("20210423093224_ModelDBContext")]
     partial class ModelDBContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,7 @@ namespace LeventDurdali_HW2.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")

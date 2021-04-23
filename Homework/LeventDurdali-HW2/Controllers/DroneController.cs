@@ -11,10 +11,10 @@ namespace LeventDurdali_HW2.Controllers
 {
     public class DroneController : Controller
     {
-        private readonly ILogger<DroneController> _logger;
+        private readonly ILogger<HomeController> _logger;
 
         DroneDBContext _context;
-        public DroneController(ILogger<DroneController> logger, DroneDBContext context)
+        public DroneController(ILogger<HomeController> logger, DroneDBContext context)
         {
             _logger = logger;
             _context = context;
