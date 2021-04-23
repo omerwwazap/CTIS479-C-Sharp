@@ -63,10 +63,10 @@ namespace LeventDurdali_HW2
             {
                 endpoints.MapControllerRoute(
                    name: "drone",
-                   pattern: "{controller=Drone}/{action=Index}/pageNum{page:int}");
+                   pattern: "{controller=Drone}/{action=Index}/PageNumber/{page:int}");
                 endpoints.MapControllerRoute(
                     name: "helicopter",
-                    pattern: "{controller=Helicopter}/{action=Index}/pageNum{page:int}");
+                    pattern: "{controller=Helicopter}/{action=Index}/PageNumber/{page:int}");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
