@@ -12,16 +12,16 @@ namespace LeventDurdali_HW2.Models
         [Required]
         public long HelicopterId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please give a Name")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please give a Description")]
         public string Description { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please give a Category")]
         public string Category { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please give a Price")]
         [Column(TypeName = "decimal(8,2)")]
         public decimal Price { get; set; }
     }

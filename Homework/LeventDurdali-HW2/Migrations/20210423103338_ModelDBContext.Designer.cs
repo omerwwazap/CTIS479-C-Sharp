@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeventDurdali_HW2.Migrations
 {
     [DbContext(typeof(DroneDBContext))]
-    [Migration("20210423102307_ModelDBContext")]
+    [Migration("20210423103338_ModelDBContext")]
     partial class ModelDBContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
