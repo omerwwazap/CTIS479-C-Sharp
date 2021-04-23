@@ -1,3 +1,7 @@
-﻿function colorCh() {
-    document.body.style.background = #dc3545;
+﻿function colorChY() {
+    document.body.style.backgroundColor = 'yellow';
+
+}
+function colorChW() {
+    document.body.style.backgroundColor = '';
 }
