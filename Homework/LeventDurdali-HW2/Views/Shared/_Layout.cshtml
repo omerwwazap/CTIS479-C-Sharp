@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/css/backC.css" rel="stylesheet" />
     <link href="~/css/textstyles.css" rel="stylesheet" />
+    <script src="~/js/colorCh.js"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white shadow mb-3">
+        <nav id="changed" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">LeventDurdali_HW2</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -45,7 +46,9 @@
     <vc:footer />
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/colorCh.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
