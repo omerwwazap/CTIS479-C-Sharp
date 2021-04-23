@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LeventDurdali_HW2.Migrations
 {
     [DbContext(typeof(DroneDBContext))]
-    [Migration("20210422142220_DroneDBContextSnapshot")]
-    partial class DroneDBContextSnapshot
+    [Migration("20210423084044_ModelDBContext")]
+    partial class ModelDBContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,6 +42,30 @@ namespace LeventDurdali_HW2.Migrations
                     b.HasKey("DroneId");
 
                     b.ToTable("Drones");
+                });
+
+            modelBuilder.Entity("LeventDurdali_HW2.Models.Helicopter", b =>
+                {
+                    b.Property<long>("HelicopterId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(8,2)");
+
+                    b.HasKey("HelicopterId");
+
+                    b.ToTable("Helicopters");
                 });
 #pragma warning restore 612, 618
         }
