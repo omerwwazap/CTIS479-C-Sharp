@@ -64,14 +64,28 @@ namespace LeventDurdali_HW2.Models
                 {
                     Name = "T-129 Attak",
                     Description = "Turkish Military",
-                    Category = "Test",
+                    Category = "Attack Heli",
                     Price = 275
                 },
                 new Helicopter
                 {
-                    Name = "RQ-4 Global Hawk",
-                    Description = "U.S. MilitaryV",
-                    Category = "HALE",
+                    Name = "Boeing CH-47 Chinook",
+                    Description = "U.S. Military",
+                    Category = "Transport Heli",
+                    Price = 48.95m
+                },
+                new Helicopter
+                {
+                    Name = "Sikorsky UH-60 Black Hawk",
+                    Description = "U.S. Military",
+                    Category = "Utility Heli",
+                    Price = 48.95m
+                },
+                new Helicopter
+                {
+                    Name = "Mil Mi-24",
+                    Description = "Russian Millitary",
+                    Category = "Transport",
                     Price = 48.95m
                 }
                 );

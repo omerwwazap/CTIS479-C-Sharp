@@ -10,6 +10,7 @@
 #createbtn {
     float: right;
     color: yellow;
+    margin-bottom: 1em;
 }
 
 #imageSize {
