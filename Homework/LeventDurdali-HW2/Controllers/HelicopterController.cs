@@ -27,6 +27,10 @@ namespace LeventDurdali_HW2.Controllers
         }
         public IActionResult Index()
         {
+
+
+
+
             var products = _context.Helicopters.ToList();
             return View(products);
         }
