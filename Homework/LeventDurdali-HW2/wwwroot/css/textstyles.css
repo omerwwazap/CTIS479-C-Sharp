@@ -16,7 +16,7 @@
     max-width: 500px;
 }
 
-.container {
+.my-new-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,4 +25,7 @@
 
 .pad {
     margin: 10px;
+}
+#btn-wow {
+    background-color: #f00;
 }

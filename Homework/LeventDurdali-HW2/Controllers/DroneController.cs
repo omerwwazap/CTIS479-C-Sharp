@@ -25,6 +25,7 @@ namespace LeventDurdali_HW2.Controllers
             var products = _context.Drones.ToList();
             return View(products);
         }
+
         public IActionResult Detail(int? id)
         {
             if (id == null)
