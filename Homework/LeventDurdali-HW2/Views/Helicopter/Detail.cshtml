@@ -1,22 +1,15 @@
 ﻿@model Helicopter
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Helicopter Details";
 }
 
-<h2>Details</h2>
+<h2>Helicopter Details</h2>
 
 <div>
-    <h4>Helicopter</h4>
+    <h4>Helicopter ID: @Html.DisplayFor(model => model.HelicopterId)</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HelicopterId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HelicopterId)
-        </dd>
-
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>

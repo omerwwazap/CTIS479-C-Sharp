@@ -27,13 +27,13 @@ namespace LeventDurdali_HW2.Controllers
 
             List<Helicopter> productListB = new List<Helicopter>()
             {
-                new Helicopter(){Name="HP laserJet 1200", Description="e123",Category="Cat",Price=1110},
-                new Helicopter(){Name="Acer", Description="asde123",Category="Cat",Price=1110}
+                new Helicopter(){Name="Session Helicopter", Description="Very Cool Session - 1",Category="Session Demonstration - 1",Price=100},
+                new Helicopter(){Name="Session Drone", Description="Very Cool Session - 2",Category="Session Demonstration - 2",Price=100}
             };
 
             HttpContext.Session.SetJson("SessionProductsB", productListB);
 
-            HttpContext.Session.SetString("SessionVariable1", "Testing123");
+            HttpContext.Session.SetString("SessionVariable1", "Master Session Demonstration - HW2");
 
             return View();
         }
