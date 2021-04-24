@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-//Default Home Controller 
+//Default Home Controller with Session controllers
 namespace LeventDurdali_HW2.Controllers
 {
     public class HomeController : Controller
@@ -24,7 +24,7 @@ namespace LeventDurdali_HW2.Controllers
 
         public IActionResult Index()
         {
-
+            //Added these to the session
             List<Helicopter> productListB = new List<Helicopter>()
             {
                 new Helicopter(){Name="Session Helicopter", Description="Very Cool Session - 1",Category="Session Demonstration - 1",Price=100},
@@ -37,7 +37,7 @@ namespace LeventDurdali_HW2.Controllers
 
             return View();
         }
-
+        //for displaying the session elements
         public IActionResult SessionDisplay()
         {
 
@@ -51,14 +51,12 @@ namespace LeventDurdali_HW2.Controllers
             return View(productList2);
 
         }
-
+        //Demonstration session clear, than re directs to the display to show deletion
         public IActionResult Clear()
         {
             HttpContext.Session.Clear();
             return View("SessionDisplay");
         }
-
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

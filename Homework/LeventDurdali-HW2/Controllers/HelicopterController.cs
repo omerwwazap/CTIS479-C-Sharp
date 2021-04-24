@@ -24,6 +24,8 @@ namespace LeventDurdali_HW2.Controllers
         public object JsonConvert { get; private set; }
 
         DroneDBContext _context;
+
+        //Sending repo and context for page useing, sessions, and normal CRUD operations
         public HelicopterController(ILogger<HelicopterController> logger, DroneDBContext context, IHelicopterRepository repository)
         {
             _repository = repository;
@@ -33,6 +35,7 @@ namespace LeventDurdali_HW2.Controllers
 
         public IActionResult Index(int page = 1)
         {
+            //Page Functionality
             ListViewModel viewModel = new ListViewModel
             {
                 Helicopters = _repository.Helicopters.OrderBy(p => p.HelicopterId)

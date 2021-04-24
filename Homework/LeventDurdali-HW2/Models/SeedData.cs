@@ -65,28 +65,56 @@ namespace LeventDurdali_HW2.Models
                     Name = "T-129 Attak",
                     Description = "Turkish Military",
                     Category = "Attack Heli",
-                    Price = 275
+                    Price = 7m
                 },
                 new Helicopter
                 {
                     Name = "Boeing CH-47 Chinook",
                     Description = "U.S. Military",
                     Category = "Transport Heli",
-                    Price = 48.95m
+                    Price = 55m
                 },
                 new Helicopter
                 {
                     Name = "Sikorsky UH-60 Black Hawk",
                     Description = "U.S. Military",
                     Category = "Utility Heli",
-                    Price = 48.95m
+                    Price = 15m
                 },
                 new Helicopter
                 {
                     Name = "Mil Mi-24",
                     Description = "Russian Millitary",
                     Category = "Transport",
-                    Price = 48.95m
+                    Price = 13m
+                },
+                new Helicopter
+                {
+                    Name = "T-625 - Gökbey",
+                    Description = "Turkish Millitary",
+                    Category = "Utility",
+                    Price = 15m
+                },
+                new Helicopter
+                {
+                    Name = "Harbin Z-19",
+                    Description = "Chinese Millitary",
+                    Category = "Attack",
+                    Price = 45m
+                },
+                new Helicopter
+                {
+                    Name = "Avicopter AC313",
+                    Description = "Chinese Millitary",
+                    Category = "Transport",
+                    Price = 5m
+                },
+                new Helicopter
+                {
+                    Name = "Levent Helicopter",
+                    Description = "Bilkent Millitary",
+                    Category = "Utility",
+                    Price = 1m
                 }
                 );
                 context.SaveChanges();
