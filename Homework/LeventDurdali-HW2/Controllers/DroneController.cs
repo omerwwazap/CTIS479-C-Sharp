@@ -1,11 +1,7 @@
 ﻿using LeventDurdali_HW2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 // Drone Model Controller with Index, Detail, Create, Edit and Delete
 namespace LeventDurdali_HW2.Controllers
@@ -14,12 +10,14 @@ namespace LeventDurdali_HW2.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        DroneDBContext _context;
+        private DroneDBContext _context;
+
         public DroneController(ILogger<HomeController> logger, DroneDBContext context)
         {
             _logger = logger;
             _context = context;
         }
+
         public IActionResult Index()
         {
             var products = _context.Drones.ToList();
@@ -39,11 +37,13 @@ namespace LeventDurdali_HW2.Controllers
             }
             return View(products);
         }
+
         public IActionResult Create()
         {
             Drone p = new Drone();
             return View(p);
         }
+
         [HttpPost]
         public IActionResult Create(Drone p)
         {
@@ -51,6 +51,7 @@ namespace LeventDurdali_HW2.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
         public IActionResult Edit(int? id)
         {
             if (id == null)
@@ -64,6 +65,7 @@ namespace LeventDurdali_HW2.Controllers
             }
             return View(p);
         }
+
         [HttpPost]
         public IActionResult Edit(Drone pmodel)
         {
@@ -86,6 +88,7 @@ namespace LeventDurdali_HW2.Controllers
 
             return View(p);
         }
+
         [HttpPost]
         public IActionResult Delete(int id, Drone pmodel)
         {
@@ -98,9 +101,5 @@ namespace LeventDurdali_HW2.Controllers
             }
             return View(p);
         }
-
-
-
-
     }
 }

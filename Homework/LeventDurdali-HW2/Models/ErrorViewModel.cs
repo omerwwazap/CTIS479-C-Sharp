@@ -1,5 +1,3 @@
-using System;
-
 namespace LeventDurdali_HW2.Models
 {
     public class ErrorViewModel

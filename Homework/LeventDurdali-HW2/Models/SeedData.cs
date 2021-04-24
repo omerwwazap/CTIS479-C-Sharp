@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
 
 namespace LeventDurdali_HW2.Models
 {
-
     // SeedData: To populate the database and provide some sample data
     // Adds 5 entries for Drone and Helicopter models
     public class SeedData

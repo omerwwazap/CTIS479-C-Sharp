@@ -3,12 +3,8 @@ using LeventDurdali_HW2.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 //Default Home Controller with Session controllers
 namespace LeventDurdali_HW2.Controllers
@@ -37,10 +33,10 @@ namespace LeventDurdali_HW2.Controllers
 
             return View();
         }
+
         //for displaying the session elements
         public IActionResult SessionDisplay()
         {
-
             List<Helicopter> productList2 = HttpContext.Session.GetJson<List<Helicopter>>("SessionProductsB");
 
             if (HttpContext.Session.GetString("SessionVariable1") != null)
@@ -49,8 +45,8 @@ namespace LeventDurdali_HW2.Controllers
                 ViewBag.Message = "No Message was added to the session or The Session was deleted beforehand";
 
             return View(productList2);
-
         }
+
         //Demonstration session clear, than re directs to the display to show deletion
         public IActionResult Clear()
         {

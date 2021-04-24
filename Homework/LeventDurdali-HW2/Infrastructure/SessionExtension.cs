@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace LeventDurdali_HW2.Infrastructure
 {
@@ -13,6 +9,7 @@ namespace LeventDurdali_HW2.Infrastructure
         {
             session.Set(key, JsonSerializer.Serialize(value));
         }
+
         public static T Get<T>(this ISession session, string key)
         {
             var value = session.Get(key);
@@ -20,10 +17,12 @@ namespace LeventDurdali_HW2.Infrastructure
             return value == null ? default(T) :
                 JsonSerializer.Deserialize<T>(value);
         }
+
         public static void SetJson(this ISession session, string key, object value)
         {
             session.SetString(key, JsonSerializer.Serialize(value));
         }
+
         public static T GetJson<T>(this ISession session, string key)
         {
             var sessionData = session.GetString(key);
@@ -32,4 +31,3 @@ namespace LeventDurdali_HW2.Infrastructure
         }
     }
 }
-

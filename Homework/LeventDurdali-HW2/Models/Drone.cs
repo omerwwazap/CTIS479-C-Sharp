@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Threading.Tasks;
 
-//Drone Model with Required Validation   
+//Drone Model with Required Validation
 //Each Validation has a diffrent error Message to display
 namespace LeventDurdali_HW2.Models
 {

@@ -1,15 +1,8 @@
-﻿using LeventDurdali_HW2.Infrastructure;
-using LeventDurdali_HW2.Models;
+﻿using LeventDurdali_HW2.Models;
 using LeventDurdali_HW2.Models.ViewModels;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 // Helicopter Model Controller with Index, Detail, Create, Edit and Delete
 namespace LeventDurdali_HW2.Controllers
@@ -23,7 +16,7 @@ namespace LeventDurdali_HW2.Controllers
 
         public object JsonConvert { get; private set; }
 
-        DroneDBContext _context;
+        private DroneDBContext _context;
 
         //Sending repo and context for page useing, sessions, and normal CRUD operations
         public HelicopterController(ILogger<HelicopterController> logger, DroneDBContext context, IHelicopterRepository repository)
@@ -65,11 +58,13 @@ namespace LeventDurdali_HW2.Controllers
             }
             return View(products);
         }
+
         public IActionResult Create()
         {
             Helicopter p = new Helicopter();
             return View(p);
         }
+
         [HttpPost]
         public IActionResult Create(Helicopter p)
         {
@@ -77,6 +72,7 @@ namespace LeventDurdali_HW2.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
         public IActionResult Edit(int? id)
         {
             if (id == null)
@@ -90,6 +86,7 @@ namespace LeventDurdali_HW2.Controllers
             }
             return View(p);
         }
+
         [HttpPost]
         public IActionResult Edit(Helicopter pmodel)
         {
@@ -112,6 +109,7 @@ namespace LeventDurdali_HW2.Controllers
 
             return View(p);
         }
+
         [HttpPost]
         public IActionResult Delete(int id, Helicopter pmodel)
         {
@@ -124,6 +122,5 @@ namespace LeventDurdali_HW2.Controllers
             }
             return View(p);
         }
-
     }
 }
