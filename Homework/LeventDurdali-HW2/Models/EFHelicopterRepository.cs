@@ -11,7 +11,7 @@ namespace LeventDurdali_HW2.Models
             _context = context;
         }
 
-        //public IQueryable<Drone> Drones => _context.Drones;
+        public IQueryable<Drone> Drones => _context.Drones;
 
         public IQueryable<Helicopter> Helicopters => _context.Helicopters;
     }

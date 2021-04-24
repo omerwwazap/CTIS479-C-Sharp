@@ -1,4 +1,5 @@
 ﻿using LeventDurdali_HW2.Models;
+using LeventDurdali_HW2.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Linq;
@@ -8,20 +9,36 @@ namespace LeventDurdali_HW2.Controllers
 {
     public class DroneController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<DroneController> _logger;
 
         private DroneDBContext _context;
+        public int PageSize = 4;
+        private IHelicopterRepository _repository;
 
-        public DroneController(ILogger<HomeController> logger, DroneDBContext context)
+        public DroneController(ILogger<DroneController> logger, DroneDBContext context, IHelicopterRepository repository)
         {
+            _repository = repository;
             _logger = logger;
             _context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
-            var products = _context.Drones.ToList();
-            return View(products);
+            //Page Functionality
+            ListViewModel viewModel = new ListViewModel
+            {
+                Drones = _repository.Drones.OrderBy(p => p.DroneId)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize)
+,
+                PagingInfo = new PagingInfo
+                {
+                    CurentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = _repository.Helicopters.Count()
+                }
+            };
+            return View(viewModel);
         }
 
         public IActionResult Detail(int? id)

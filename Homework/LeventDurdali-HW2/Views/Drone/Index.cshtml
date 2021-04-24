@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Drone>
+﻿@model ListViewModel
 @{
     ViewData["Title"] = "Drone Home Page";
 }
@@ -18,7 +18,7 @@
         <td></td>
         <td></td>
     </tr>
-    @foreach (Drone p in Model)
+    @foreach (Drone p in Model.Drones)
     {
         <tr>
             <td>@p.Name</td>
@@ -34,13 +34,23 @@
 </table>
 
 <div class="text-center">
+    <div page-model="@Model.PagingInfo"
+         page-action="Index"
+         page-classes-enabled="true"
+         page-class-normal="btn btn-outline-dark"
+         page-class-selected="btn btn-primary"
+         class="btn-group m-1">
+    </div>
+</div>
+
+<div class="text-center">
     <img class="img-thumbnail" src="~/images/uav.png" />
 </div>
 <br>
 <div class="text-center">
     <p> <strong>TagHelper Useage</strong> </p>
 </div>
-@foreach (Drone p in Model)
+@foreach (Drone p in Model.Drones)
 {
     <partial name="DroneSummary" model="p" />
 }
