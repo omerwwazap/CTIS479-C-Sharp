@@ -8,7 +8,7 @@
 - [x] (15pts) Display all the table contents with paging links and provide CRUD operations onat least one table.
 - [x] (10pts) Implement session to add at least one list with object from model and display session values in one of the view files.
 - [x] (8pts) Create and use at least one partial view.
-- [ ] (8pts) Create and use at least one tag helper.
+- [x] (8pts) Create and use at least one tag helper.
 - [x] (8pts) Create and use at least one view component.
 - [x] (8pts)Add new routing rules
 - [x] (5 pts) Create css file which contains at least2 css rule and apply it to whole views.
