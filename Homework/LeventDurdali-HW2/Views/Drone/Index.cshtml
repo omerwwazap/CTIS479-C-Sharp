@@ -9,11 +9,21 @@
 <td><a id="createbtn" class="btn btn-primary" asp-controller="Drone" asp-action="Create">Create</a></td>
 
 <table class="table table-striped table-hover">
+    <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Description</strong></td>
+        <td><strong>Category</strong></td>
+        <td><strong>Price</strong></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
     @foreach (Drone p in Model)
     {
         <tr>
             <td>@p.Name</td>
             <td>@p.Description</td>
+            <td>@p.Category</td>
             <td>@p.Price</td>
             <td><a asp-controller="Drone" asp-action="Detail" asp-route-id="@p.DroneId">Detail</a></td>
             <td><a asp-controller="Drone" asp-action="Edit" asp-route-id="@p.DroneId">Edit</a></td>
@@ -26,9 +36,9 @@
 <div class="text-center">
     <img class="img-thumbnail" src="~/images/uav.png" />
 </div>
-
+<br>
 <div class="text-center">
-    <p> TagHelper Useage </p>
+    <p> <strong>TagHelper Useage</strong> </p>
 </div>
 @foreach (Drone p in Model)
 {
